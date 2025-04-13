@@ -4,15 +4,15 @@ import numpy as np
 
 
 def get_random():
-    # Create a quantum circuit with 6 qubits and 6 classical bits
-    circuit = QuantumCircuit(6, 6)
+    # Create a quantum circuit with 5 qubits and 5 classical bits
+    circuit = QuantumCircuit(5, 5)
 
     # Apply a Hadamard gate to qubits
-    for i in range(6):
+    for i in range(5):
         circuit.h(i)
 
     # Measure qubits
-    for i in range(6):
+    for i in range(5):
         circuit.measure(i, i)
 
     # Aer simulator
@@ -32,9 +32,4 @@ def get_random():
     # Convert the binary string to an integer
     random_number = int(binary_string, 2)
 
-    # Scale the random number to the range 1-50
-    random_number = (random_number % 50) + 1
-
     return random_number
-
-    #this is bad because it is not uniformly random i dont think...
